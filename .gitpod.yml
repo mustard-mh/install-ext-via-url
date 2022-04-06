@@ -1,3 +1,7 @@
+tasks:
+  - name: hello
+    command: echo hello
+    
 # vscode:
 #   extensions:
 #     - redhat.java
