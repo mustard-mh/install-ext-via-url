@@ -95,11 +95,12 @@ func resolveFromOpenVSX(vsxUrl string, name string, version string) (string, err
 		return "", err
 	}
 	url.Path = "/api/-/query"
-	data := map[string]string{
+	data := map[string]interface{}{
 		"extensionId": name,
 	}
 	if version != "" {
 		data["extensionVersion"] = version
+		data["includeAllVersions"] = true
 	}
 	b, err := json.Marshal(data)
 	if err != nil {
